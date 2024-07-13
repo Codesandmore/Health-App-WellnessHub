@@ -59,7 +59,7 @@ const BMI = ({ formData, calories }) => {
         <p>{calories} kcal</p>
       </div>
       <div className="food-list">
-        <h2>Food List</h2>
+        <h2>Enter what you ate today</h2>
         <div className="input-container">
           <input
             type="text"
@@ -78,8 +78,10 @@ const BMI = ({ formData, calories }) => {
             </li>
           ))}
         </ul>
-        <button onClick={handleDone}>Done</button>
       </div>
+      <div className="done">
+        <button onClick={handleDone}>Done</button>
+        </div>
     </div>
   );
 };

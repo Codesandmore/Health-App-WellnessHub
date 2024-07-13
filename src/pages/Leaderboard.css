@@ -1,0 +1,59 @@
+.leaderboard-container {
+    display: flex;
+    justify-content: center;
+    align-items:center; /* Align items to the top */
+    padding: 40px;
+    height: calc(100vh - 80px); /* Adjusted height for header and footer */
+    background-color: #000000; /* Light background color */
+  }
+  
+  .leaderboard {
+    width: 50%;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .leaderboard h2 {
+    text-align: center;
+    color: #ebebeb;
+    margin-bottom: 20px;
+  }
+  
+  .leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .leaderboard th,
+  .leaderboard td {
+    padding: 12px;
+    border: 1px solid #000000;
+    text-align: center;
+  }
+  
+  .leaderboard tbody tr:hover {
+    background-color: #575757; /* Lighter background color on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-card {
+    width: 30%;
+    margin-left: 40px; /* Adjust spacing between leaderboard and user card */
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .user-card h3,
+  .user-card p {
+    text-align: center;
+    color: #ebebeb;
+    margin-bottom: 10px;
+  }
+  

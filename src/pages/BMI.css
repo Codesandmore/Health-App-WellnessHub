@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-left: 750px;
-    height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 135px;
   }
   
   .details-section, .bmi-result {
@@ -19,11 +19,11 @@
  .details-section p {
     margin: 5px 0;
   }
-  .food-list ul{
+/*   .food-list {
     max-height: 60px;
     overflow-y: auto;
     scroll-behavior: smooth;
-  }
+  } */
   .remove-button {
     background-color:black;
     color: white;
@@ -31,4 +31,9 @@
     border-radius: 50%;
     cursor: pointer;
     padding: 0 5px;
+  }
+
+  .done {
+    align-items: center;
+    padding-bottom: 20px;
   }
