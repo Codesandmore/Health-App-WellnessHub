@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx'; // Import Home.jsx
 import Login from './pages/Login.jsx';
 import FormInput from './pages/FormInput.jsx';
 import BMI from './pages/BMI.jsx';
@@ -27,7 +28,8 @@ const App = () => {
       <Navbar />
       <section className="main">
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} /> {/* Update default route */}
+          <Route path="/login" element={<Login />} />
           <Route
             path="/form"
             element={<FormInput onFormSubmit={handleFormSubmit} />}
@@ -37,8 +39,8 @@ const App = () => {
             element={<BMI formData={formData} calories={calories} />}
           />
           <Route path="/leaderboard" element={<Leaderboard />} />
-          {/* Redirect to "/" if no route matches */}
-          <Route path="*" element={<Login />} />
+          {/* Redirect to Home if no route matches */}
+          <Route path="*" element={<Home />} />
         </Routes>
       </section>
       <Footer />
