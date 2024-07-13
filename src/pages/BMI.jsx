@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './BMI.css';
 
-const BMI = ({ formData, calories }) => {
+const BMI = ({ formData }) => {
   const { gender, age, height, weight } = formData;
   const heightInMeters = height / 100;
   const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
   const [foods, setFoods] = useState([]);
   const [foodItem, setFoodItem] = useState('');
   const [caloriesConsumed, setCaloriesConsumed] = useState(0);
-  const calorieCountPerItem = 100; // Default calorie count for each item
+
+  const navigate = useNavigate();
+
+  const generateRandomCalories = () => {
+    return Math.floor(Math.random() * (200 - 50 + 1)) + 50;
+  };
 
   const addFood = () => {
     if (foodItem.trim() !== '') {
+      const calorieCountPerItem = generateRandomCalories();
       setFoods([...foods, { name: foodItem, calories: calorieCountPerItem }]);
       setCaloriesConsumed(caloriesConsumed + calorieCountPerItem);
       setFoodItem('');
@@ -30,11 +37,13 @@ const BMI = ({ formData, calories }) => {
   };
 
   const handleDone = () => {
-    if (caloriesConsumed >= calories) {
+    const totalCalories = foods.reduce((total, food) => total + food.calories, 0);
+    if (totalCalories >= caloriesConsumed) {
       alert('Good job!');
     } else {
       alert('Do better');
     }
+    navigate('/leaderboard'); // Navigate to Leaderboard page
   };
 
   const removeFood = (index) => {
@@ -56,7 +65,7 @@ const BMI = ({ formData, calories }) => {
         <h2>BMI</h2>
         <p>Your BMI is: {bmi}</p>
         <h2>Today's Calorie Consumption</h2>
-        <p>{calories} kcal</p>
+        <p>{caloriesConsumed} kcal</p>
       </div>
       <div className="food-list">
         <h2>Enter what you ate today</h2>
@@ -65,7 +74,7 @@ const BMI = ({ formData, calories }) => {
             type="text"
             value={foodItem}
             onChange={handleFoodItemChange}
-            onKeyDown={handleKeyDown} // Add this line
+            onKeyDown={handleKeyDown}
             placeholder="Add a new food item"
           />
           <button onClick={addFood}>Add</button>
@@ -81,7 +90,7 @@ const BMI = ({ formData, calories }) => {
       </div>
       <div className="done">
         <button onClick={handleDone}>Done</button>
-        </div>
+      </div>
     </div>
   );
 };

@@ -1,26 +1,47 @@
 .navbar {
-    background-color: #333;
-    padding: 10px 20px; /* Adjust padding as needed */
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
-  .navbar-nav {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around; /* Align items to the right */
-    margin-left: 70%;
-  }
-  
-  .nav-item a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-item a:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #333;
+  padding: 10px 20px; /* Adjust padding as needed */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around; /* Align items to the right */
+  margin-left: 70%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item a, .nav-item button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.nav-item a:hover, .nav-item button:hover {
+  text-decoration: underline;
+}
+
+.signup-button, .logout-button {
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover, .logout-button:hover {
+  background-color: white;
+}
