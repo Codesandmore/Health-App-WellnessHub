@@ -1,4 +1,37 @@
-.home {
-    padding-top: 15%;
-/*     height: 80vh; */
-}
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100vh - 160px); /* Adjust height to account for header and footer */
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .home-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .home-content h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .home-content p {
+    color: #555;
+  }
+  
+  .home-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

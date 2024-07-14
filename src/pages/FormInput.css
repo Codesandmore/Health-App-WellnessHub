@@ -1,0 +1,69 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 160px); /* Adjust height to account for header and footer */
+    padding: 20px;
+    background-color: #f0f0f0; /* Light background color */
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .card h2 {
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #555;
+    align-items: center; /* Align items in the center vertically */
+  }
+  
+  .card label span {
+    margin-right: 10px; /* Space between label text and input field */
+    width: 30%; /* Explicit width for label text */
+  }
+  
+  .card input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex-grow: 1;
+    width: 50%; /* Explicit width for input fields */
+  }
+  
+  .card button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+  }
+  

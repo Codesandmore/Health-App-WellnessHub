@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FormInput.css'; // Import the CSS file
 
 const FormInput = ({ onFormSubmit }) => {
   const [formData, setFormData] = useState({
@@ -19,31 +20,29 @@ const FormInput = ({ onFormSubmit }) => {
   };
 
   return (
-    <div>
-      <h2>Form Input</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Gender:
-          <input type="text" name="gender" value={formData.gender} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Age:
-          <input type="number" name="age" value={formData.age} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Height (cm):
-          <input type="number" name="height" value={formData.height} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Weight (kg):
-          <input type="number" name="weight" value={formData.weight} onChange={handleChange} />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="form-container">
+      <div className="card">
+        <h2>Enter your current biometerics</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <span>Gender:</span>
+            <input type="text" name="gender" value={formData.gender} onChange={handleChange} />
+          </label>
+          <label>
+            <span>Age:</span>
+            <input type="number" name="age" value={formData.age} onChange={handleChange} />
+          </label>
+          <label>
+            <span>Height (cm):</span>
+            <input type="number" name="height" value={formData.height} onChange={handleChange} />
+          </label>
+          <label>
+            <span>Weight (kg):</span>
+            <input type="number" name="weight" value={formData.weight} onChange={handleChange} />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };
