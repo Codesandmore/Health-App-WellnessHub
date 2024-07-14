@@ -9,6 +9,8 @@ const BMI = ({ formData }) => {
   const [foods, setFoods] = useState([]);
   const [foodItem, setFoodItem] = useState('');
   const [caloriesConsumed, setCaloriesConsumed] = useState(0);
+  const [timeoutId, setTimeoutId] = useState(null); // To manage the delay timeout
+  const [isLoading, setIsLoading] = useState(false); // To show spinner during delay
 
   const navigate = useNavigate();
 
@@ -19,9 +21,18 @@ const BMI = ({ formData }) => {
   const addFood = () => {
     if (foodItem.trim() !== '') {
       const calorieCountPerItem = generateRandomCalories();
-      setFoods([...foods, { name: foodItem, calories: calorieCountPerItem }]);
-      setCaloriesConsumed(caloriesConsumed + calorieCountPerItem);
-      setFoodItem('');
+      
+      setIsLoading(true); // Show spinner
+      
+      // Set a new timeout for updating calories and displaying the food item
+      const id = setTimeout(() => {
+        setFoods([...foods, { name: foodItem, calories: calorieCountPerItem }]);
+        setCaloriesConsumed(caloriesConsumed + calorieCountPerItem);
+        setFoodItem('');
+        setIsLoading(false); // Hide spinner
+      }, 6000); // 6000ms = 6 seconds
+
+      setTimeoutId(id); // Save timeout ID to clear it later if needed
     }
   };
 
@@ -77,7 +88,8 @@ const BMI = ({ formData }) => {
             onKeyDown={handleKeyDown}
             placeholder="Add a new food item"
           />
-          <button onClick={addFood}>Add</button>
+          <button onClick={addFood} disabled={isLoading}>Add</button>
+          {isLoading && <div className="loading-spinner"></div>} {/* Show spinner */}
         </div>
         <ul>
           {foods.map((food, index) => (
