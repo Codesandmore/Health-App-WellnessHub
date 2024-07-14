@@ -1,4 +1,4 @@
-![WellnessHub Logo](./public/welhub.png) # WellnessHub
+#![WellnessHub Logo](./public/welhub.png) WellnessHub
 
 
 ## Overview
