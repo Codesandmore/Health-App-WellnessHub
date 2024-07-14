@@ -15,7 +15,11 @@ const App = () => {
   const handleFormSubmit = (data, navigate) => {
     setFormData(data);
     setIsAuthenticated(true);
-    navigate('/bmi');
+
+    
+    setTimeout(() => {
+      navigate('/bmi');
+    }, 1000); 
   };
 
   const handleLogout = () => {

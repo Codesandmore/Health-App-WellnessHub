@@ -8,6 +8,7 @@ const FormInput = ({ onFormSubmit }) => {
     height: '',
     weight: ''
   });
+  const [loading, setLoading] = useState(false); // New state for loading
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,7 +17,8 @@ const FormInput = ({ onFormSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onFormSubmit(formData);
+    setLoading(true); // Show loading spinner
+    onFormSubmit(formData); // Pass the data to the handler
   };
 
   return (
@@ -42,6 +44,7 @@ const FormInput = ({ onFormSubmit }) => {
           </label>
           <button type="submit">Submit</button>
         </form>
+        {loading && <div className="loading-spinner"></div>} {/* Loading spinner */}
       </div>
     </div>
   );
