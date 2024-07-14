@@ -1,5 +1,5 @@
 # WellnessHub
-![WellnessHub Logo](./welhub.png)
+![WellnessHub Logo](./public/welhub.png)
 
 ## Overview
 WellnessHub is a Web3 application that revolutionizes health management by integrating advanced tracking features with blockchain technology. It helps users monitor their health metrics and rewards them for maintaining a healthy lifestyle.
