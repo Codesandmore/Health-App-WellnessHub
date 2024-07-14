@@ -20,18 +20,18 @@ const BMI = ({ formData }) => {
 
   const addFood = async () => {
     if (foodItem.trim() !== "") {
-      // const response = await fetch("/get_calories", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     food: foodItem.trim(),
-      //   }),
-      // });
-      // const result = await response.json();
-      //const calorieCountPerItem = result["calories"];
-      const calorieCountPerItem = generateRandomCalories();
+      const response = await fetch("/get_calories", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          food: foodItem.trim(),
+        }),
+      });
+      const result = await response.json();
+      const calorieCountPerItem = result["calories"];
+      // const calorieCountPerItem = generateRandomCalories();
 
       setIsLoading(true); // Show spinner
 
